@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>Maven Parent</name>
+
+    <groupId>me.flungo</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <description>Generic Maven Parent for use within projects. Forms the base of the flungo-parent.</description>
+
+    <properties>
+        <!-- Use UTF-8 source encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Plugin versions -->
+        <plugin.maven-project-info-reports.version>2.9</plugin.maven-project-info-reports.version>
+        <!-- Version held back, see: https://issues.apache.org/jira/browse/SUREFIRE-1216 -->
+        <plugin.maven-surefire.version>2.18.1</plugin.maven-surefire.version>
+        <plugin.maven-jxr.version>2.5</plugin.maven-jxr.version>
+        <plugin.maven-javadoc.version>2.10.4</plugin.maven-javadoc.version>
+        <plugin.maven-checkstyle.version>2.17</plugin.maven-checkstyle.version>
+        <plugin.maven-pmd.version>3.7</plugin.maven-pmd.version>
+        <plugin.mojo-versions.version>2.3</plugin.mojo-versions.version>
+        <plugin.mojo-findbugs.version>3.0.4</plugin.mojo-findbugs.version>
+        <plugin.mojo-taglist.version>2.4</plugin.mojo-taglist.version>
+        <plugin.jacoco.version>0.7.9</plugin.jacoco.version>
+    </properties>
+
+    <build>
+        <!-- Set the versions and default configuration for plugins -->
+        <pluginManagement>
+            <plugins>
+                <!-- Project Info Reports -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${plugin.maven-project-info-reports.version}</version>
+                </plugin>
+                <!-- Surefire testing report -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>${plugin.maven-surefire.version}</version>
+                </plugin>
+                <!-- Java Cross Reference Reports -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>${plugin.maven-jxr.version}</version>
+                </plugin>
+                <!-- JavaDoc Report -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${plugin.maven-javadoc.version}</version>
+                </plugin>
+                <!-- Checkstyle Report -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${plugin.maven-checkstyle.version}</version>
+                </plugin>
+                <!-- Programming Mistake Detector -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${plugin.maven-pmd.version}</version>
+                </plugin>
+                <!-- Report on Maven Versions -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${plugin.mojo-versions.version}</version>
+                </plugin>
+                <!-- FindBugs Report -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${plugin.mojo-findbugs.version}</version>
+                </plugin>
+                <!-- Tag List Report -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>taglist-maven-plugin</artifactId>
+                    <version>${plugin.mojo-taglist.version}</version>
+                </plugin>
+                <!-- JaCoCo Coverage Report -->
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${plugin.jacoco.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <reporting>
+        <!-- Core reporting plugins for all projects -->
+        <plugins>
+            <!-- Project Info Reports -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${plugin.maven-project-info-reports.version}</version>
+            </plugin>
+            <!-- Report on Maven Versions -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${plugin.mojo-versions.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+</project>
