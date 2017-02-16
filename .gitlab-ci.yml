@@ -2,9 +2,9 @@
 # For docker image tags see https://hub.docker.com/_/maven/
 #
 # For general lifecycle information see https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
-# 
+#
 # This template will build and test your projects as well as create the documentation.
-# 
+#
 # * Caches downloaded dependencies and plugins between invocation.
 # * Does only verify merge requests but deploy built artifacts of the
 #   master branch.
@@ -27,7 +27,7 @@ cache:
   paths:
     - /root/.m2/repository/
 
-# This will only validate and compile stuff and run e.g. maven-enforcer-plugin. 
+# This will only validate and compile stuff and run e.g. maven-enforcer-plugin.
 # Because some enforcer rules might check dependency convergence and class duplications
 # we use `test-compile` here instead of `validate`, so the correct classpath is picked up.
 .validate: &validate
@@ -83,6 +83,8 @@ deploy:jdk8:
     paths:
     - target/staging
   image: maven:3.3.9-jdk-8
+  tags:
+    - nexus.flungo.me
 
 
 pages:
@@ -99,4 +101,3 @@ pages:
     - public
   only:
     - master
-
