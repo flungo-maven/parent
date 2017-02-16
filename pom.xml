@@ -11,6 +11,12 @@
 
     <description>Generic Maven Parent for use within projects. Sets the base plugin versions and configurations forming the base of the flungo-parent.</description>
 
+    <scm>
+        <connection>scm:git:git://gitlab.com/flungo-maven/parent.git</connection>
+        <developerConnection>scm:git:ssh://git@gitlab.com:flungo-maven/parent.git</developerConnection>
+        <url>https://gitlab.com/flungo-maven/parent/tree/master</url>
+    </scm>
+
     <properties>
         <!-- Use UTF-8 source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
