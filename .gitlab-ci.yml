@@ -78,10 +78,10 @@ deploy:jdk8:
   only:
     - master
     - develop
-  # Archive up the built documentation site.
+  # Archive the deployed target.
   artifacts:
     paths:
-    - target/staging
+    - target
   image: maven:3.3.9-jdk-8
   tags:
     - nexus.flungo.me
