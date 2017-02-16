@@ -249,9 +249,5 @@
             <id>flungo.me</id>
             <url>https://nexus.flungo.me/repository/maven-snapshots/</url>
         </snapshotRepository>
-        <site>
-            <id>flungo.me</id>
-            <url>dav:https://nexus.flungo.me/repository/maven-sites/${project.groupId}/${project.artifactId}/</url>
-        </site>
     </distributionManagement>
 </project>
