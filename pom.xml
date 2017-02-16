@@ -124,14 +124,26 @@
         </plugins>
     </reporting>
 
+    <repositories>
+        <repository>
+            <id>flungo.me</id>
+            <name>flungo's Maven Repository</name>
+            <url>https://nexus.flungo.me/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
     <distributionManagement>
         <repository>
-            <id>nexus.flungo.me</id>
+            <id>flungo.me</id>
             <url>https://nexus.flungo.me/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus.flungo.me</id>
+            <id>flungo.me</id>
             <url>https://nexus.flungo.me/repository/maven-snapshots/</url>
         </snapshotRepository>
+        <site>
+            <id>flungo.me</id>
+            <url>dav:https://nexus.flungo.me/repository/maven-sites/${project.groupId}/${project.artifactId}/</url>
+        </site>
     </distributionManagement>
 </project>
