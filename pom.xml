@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <description>Generic Maven Parent for use within projects. Forms the base of the flungo-parent.</description>
+    <description>Generic Maven Parent for use within projects. Sets the base plugin versions and configurations forming the base of the flungo-parent.</description>
 
     <properties>
         <!-- Use UTF-8 source encoding -->
