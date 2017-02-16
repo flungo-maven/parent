@@ -123,4 +123,15 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus.flungo.me</id>
+            <url>https://nexus.flungo.me/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus.flungo.me</id>
+            <url>https://nexus.flungo.me/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
