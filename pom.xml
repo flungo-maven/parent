@@ -53,6 +53,11 @@
     <plugin.maven-javadoc.version>2.10.4</plugin.maven-javadoc.version>
     <plugin.maven-checkstyle.version>2.17</plugin.maven-checkstyle.version>
     <plugin.maven-pmd.version>3.7</plugin.maven-pmd.version>
+
+    <!-- Codehause plugins -->
+    <plugin.mojo-exec.version>1.6.0</plugin.mojo-exec.version>
+
+    <!-- Codehaus reporting plugins -->
     <plugin.mojo-versions.version>2.3</plugin.mojo-versions.version>
     <plugin.mojo-findbugs.version>3.0.4</plugin.mojo-findbugs.version>
     <plugin.mojo-taglist.version>2.4</plugin.mojo-taglist.version>
@@ -211,6 +216,15 @@
           <artifactId>maven-pmd-plugin</artifactId>
           <version>${plugin.maven-pmd.version}</version>
         </plugin>
+
+        <!-- Codehaus plugins -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${plugin.mojo-exec.version}</version>
+        </plugin>
+
+        <!-- Codehaus reporting plugins -->
         <plugin>
           <!-- Report on Maven Versions -->
           <groupId>org.codehaus.mojo</groupId>
